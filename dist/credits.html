@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>مصادر الصور — LUNO</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500&family=Cormorant+Garamond:wght@600&family=Tajawal:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --cream: #f5f1e8;
+        --paper: #fbf8f2;
+        --olive: #5f6b4f;
+        --olive-deep: #3e4635;
+        --beige: #d9c9b2;
+        --ink: #2b2f27;
+        --muted: #747669;
+        --line: rgba(62, 70, 53, 0.16);
+        --font-body: 'Tajawal', system-ui, sans-serif;
+        --font-display: 'Alexandria', 'Tajawal', sans-serif;
+        --font-latin: 'Cormorant Garamond', serif;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+
+      body {
+        min-height: 100vh;
+        padding: clamp(24px, 5vw, 64px) clamp(18px, 4vw, 40px);
+        background: var(--cream);
+        color: var(--ink);
+        font-family: var(--font-body);
+        line-height: 1.8;
+      }
+
+      .page {
+        width: min(100%, 1060px);
+        margin-inline: auto;
+      }
+
+      .top {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding-bottom: 22px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: inline-flex;
+        flex-direction: column;
+        line-height: 1;
+        text-decoration: none;
+        color: var(--olive-deep);
+      }
+
+      .brand span:first-child {
+        font-family: var(--font-latin);
+        font-size: 30px;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+      }
+
+      .brand span:last-child {
+        margin-top: 4px;
+        font-size: 10.5px;
+        color: var(--muted);
+      }
+
+      .back {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 20px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        color: var(--olive-deep);
+        font-size: 12.5px;
+        text-decoration: none;
+        transition: background 0.25s ease, color 0.25s ease;
+      }
+
+      .back:hover {
+        background: var(--olive);
+        color: var(--paper);
+      }
+
+      header.hero {
+        padding-block: clamp(32px, 5vw, 52px) clamp(24px, 4vw, 36px);
+      }
+
+      .eyebrow {
+        color: var(--olive);
+        font-size: 11.5px;
+        letter-spacing: 0.08em;
+      }
+
+      h1 {
+        margin-top: 10px;
+        font-family: var(--font-display);
+        font-size: clamp(1.7rem, 4vw, 2.5rem);
+        font-weight: 500;
+        line-height: 1.4;
+      }
+
+      .lead {
+        max-width: 62ch;
+        margin-top: 14px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 2;
+      }
+
+      .license {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px 14px;
+        margin-top: 20px;
+        padding: 14px 18px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: var(--paper);
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      .license a {
+        color: var(--olive);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      .table-wrap {
+        overflow-x: auto;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: var(--paper);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 720px;
+        font-size: 12.5px;
+      }
+
+      caption {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+      }
+
+      th,
+      td {
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--line);
+        text-align: start;
+        vertical-align: middle;
+      }
+
+      th {
+        background: var(--cream);
+        color: var(--olive-deep);
+        font-family: var(--font-display);
+        font-size: 11.5px;
+        font-weight: 500;
+        white-space: nowrap;
+      }
+
+      tbody tr:last-child td {
+        border-bottom: 0;
+      }
+
+      tbody tr:hover {
+        background: rgba(217, 201, 178, 0.16);
+      }
+
+      .thumb {
+        width: 52px;
+        height: 58px;
+        border-radius: 8px;
+        object-fit: cover;
+        background: var(--beige);
+      }
+
+      .file {
+        display: block;
+        font-family: ui-monospace, 'Cascadia Code', Consolas, monospace;
+        font-size: 11px;
+        color: var(--olive-deep);
+        white-space: nowrap;
+      }
+
+      .subject {
+        color: var(--muted);
+        font-size: 11.5px;
+      }
+
+      .source a {
+        color: var(--olive);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+        word-break: break-all;
+      }
+
+      .note {
+        margin-top: 22px;
+        padding: 16px 18px;
+        border-inline-start: 2px solid var(--beige);
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.95;
+      }
+
+      footer.page-foot {
+        margin-top: 34px;
+        padding-top: 18px;
+        border-top: 1px solid var(--line);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px;
+        color: var(--muted);
+        font-size: 11px;
+      }
+
+      footer.page-foot a {
+        color: var(--olive);
+        text-decoration: none;
+      }
+
+      @media (max-width: 560px) {
+        .top {
+          align-items: flex-start;
+        }
+
+        .license {
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="top">
+        <a class="brand" href="/">
+          <span>LUNO</span>
+          <span>ساعات وإكسسوارات</span>
+        </a>
+        <a class="back" href="/">← العودة إلى المتجر</a>
+      </div>
+
+      <header class="hero">
+        <p class="eyebrow">التوثيق · PHOTO CREDITS</p>
+        <h1>مصادر الصور والتراخيص</h1>
+        <p class="lead">
+          جميع الصور المستخدمة في هذا النموذج مأخوذة من Pexels ومحفوظة محليًا داخل
+          مجلد <code>public/images</code>. استُخدمت الصور لأغراض العرض التجريبي فقط،
+          وتم توثيق المصوّر ورابط المصدر لكل صورة.
+        </p>
+        <div class="license">
+          <span>الرخصة: Pexels License — استخدام مجاني للأغراض التجارية وغير التجارية.</span>
+          <a href="https://www.pexels.com/license/" target="_blank" rel="noreferrer">
+            قراءة نص الرخصة
+          </a>
+        </div>
+      </header>
+
+      <div class="table-wrap">
+        <table>
+          <caption>قائمة الصور ومصادرها</caption>
+          <thead>
+            <tr>
+              <th scope="col">الصورة</th>
+              <th scope="col">الملف</th>
+              <th scope="col">الموضوع</th>
+              <th scope="col">المصوّر</th>
+              <th scope="col">المصدر</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><img class="thumb" src="/images/hero-luno.jpg" alt="" loading="lazy" /></td>
+              <td><span class="file">hero-luno.jpg</span></td>
+              <td class="subject">ساعة ومجوهرات وزجاجة عطر على طاولة فاتحة</td>
+              <td>Pegah Sharifi</td>
+              <td class="source">
+                <a href="https://www.pexels.com/photo/a-wristwatch-beside-a-perfume-9888084/" target="_blank" rel="noreferrer">pexels.com/photo/9888084</a>
+              </td>
+            </tr>
+            <tr>
+              <td><img class="thumb" src="/images/watch-aura.jpg" alt="" loading="lazy" /></td>
+              <td><span class="file">watch-aura.jpg</span></td>
+              <td class="subject">ساعة بسوار جلد بني على حامل عرض</td>
+              <td>Dream_ maKkerzz</td>
+              <td class="source">
+                <a href="https://www.pexels.com/photo/elegant-timex-watch-with-leather-strap-display-28157826/" target="_blank" rel="noreferrer">pexels.com/photo/28157826</a>
+              </td>
+            </tr>
+            <tr>
+              <td><img class="thumb" src="/images/watch-nova.jpg" alt="" loading="lazy" /></td>
+              <td><span class="file">watch-nova.jpg</span></td>
+              <td class="subject">ساعة فضيَّة بسوار معدني</td>
+              <td>Ninety Seven Years</td>
+              <td class="source">
+                <a href="https://www.pexels.com/photo/a-close-up-shot-of-a-silver-wristwatch-11732775/" target="_blank" rel="noreferrer">pexels.com/photo/11732775</a>
+              </td>
+            </tr>
+            <tr>
+              <td><img class="thumb" src="/images/watch-lina.jpg" alt="" loading="lazy" /></td>
+              <td><span class="file">watch-lina.jpg</span></td>
+              <td class="subject">ساعة مينيمال بميناء أبيض وسوار أسود</td>
+              <td>Brunxs</td>
+              <td class="source">
+                <a href="https://www.pexels.com/photo/minimalist-black-and-white-analog-wristwatch-33524465/" target="_blank" rel="noreferrer">pexels.com/photo/33524465</a>
+              </td>
+            </tr>
+            <tr>
+              <td><img class="thumb" src="/images/watch-elite.jpg" alt="" loading="lazy" /></td>
+              <td><span class="file">watch-elite.jpg</span></td>
+              <td class="subject">ساعة كرونوغراف فضيَّة</td>
+              <td>Fernando Arcos</td>
+              <td class="source">
+                <a href="https://www.pexels.com/photo/silver-linked-bracelet-silver-and-black-round-chronograph-watch-190819/" target="_blank" rel="noreferrer">pexels.com/photo/190819</a>
+              </td>
+            </tr>
+            <tr>
+              <td><img class="thumb" src="/images/necklace-hala.jpg" alt="" loading="lazy" /></td>
+              <td><span class="file">necklace-hala.jpg</span></td>
+              <td class="subject">عقد ذهبي على كتاب مفتوح</td>
+              <td>kaboompics.com</td>
+              <td class="source">
+                <a href="https://www.pexels.com/photo/close-up-shot-of-a-gold-necklace-on-a-book-4889719/" target="_blank" rel="noreferrer">pexels.com/photo/4889719</a>
+              </td>
+            </tr>
+            <tr>
+              <td><img class="thumb" src="/images/earrings-lumi.jpg" alt="" loading="lazy" /></td>
+              <td><span class="file">earrings-lumi.jpg</span></td>
+              <td class="subject">أقراط ذهبية على مرآة دائرية</td>
+              <td>Ebru Akal</td>
+              <td class="source">
+                <a href="https://www.pexels.com/photo/gold-earrings-on-round-mirror-12585697/" target="_blank" rel="noreferrer">pexels.com/photo/12585697</a>
+              </td>
+            </tr>
+            <tr>
+              <td><img class="thumb" src="/images/bracelet-soul.jpg" alt="" loading="lazy" /></td>
+              <td><span class="file">bracelet-soul.jpg</span></td>
+              <td class="subject">سوار ذهبي على حامل عرض</td>
+              <td>Vedat Kandemir</td>
+              <td class="source">
+                <a href="https://www.pexels.com/photo/elegant-gold-bracelet-on-display-stand-28933801/" target="_blank" rel="noreferrer">pexels.com/photo/28933801</a>
+              </td>
+            </tr>
+            <tr>
+              <td><img class="thumb" src="/images/silver-set.jpg" alt="" loading="lazy" /></td>
+              <td><span class="file">silver-set.jpg</span></td>
+              <td class="subject">مجوهرات فضية على أحجار طبيعية</td>
+              <td>cottonbro studio</td>
+              <td class="source">
+                <a href="https://www.pexels.com/photo/close-up-shot-of-silver-jewelries-9430468/" target="_blank" rel="noreferrer">pexels.com/photo/9430468</a>
+              </td>
+            </tr>
+            <tr>
+              <td><img class="thumb" src="/images/category-watches.jpg" alt="" loading="lazy" /></td>
+              <td><span class="file">category-watches.jpg</span></td>
+              <td class="subject">ساعة على معصم بإضاءة دافئة</td>
+              <td>Kurchakto</td>
+              <td class="source">
+                <a href="https://www.pexels.com/photo/a-person-wearing-a-wristwatch-9713527/" target="_blank" rel="noreferrer">pexels.com/photo/9713527</a>
+              </td>
+            </tr>
+            <tr>
+              <td><img class="thumb" src="/images/category-accessories.jpg" alt="" loading="lazy" /></td>
+              <td><span class="file">category-accessories.jpg</span></td>
+              <td class="subject">مجموعة إكسسوارات على صينية زجاجية</td>
+              <td>Harper Sunday</td>
+              <td class="source">
+                <a href="https://www.pexels.com/photo/close-up-shot-of-jewelries-12753202/" target="_blank" rel="noreferrer">pexels.com/photo/12753202</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="note">
+        أسماء المصوّرين وروابط المصادر مأخوذة من صفحات Pexels وقت إعداد النموذج، وقد
+        تتغير تفاصيلها لاحقًا. لا يستخدم التطبيق روابط الصور المباشرة من Pexels؛ بل
+        النسخ المحلية المحسّنة. لا تُباع الصور كما هي ولا يُعاد نشرها كعمل فني مستقل.
+      </p>
+
+      <footer class="page-foot">
+        <span>© ٢٠٢٦ LUNO — نموذج واجهة غير تجاري.</span>
+        <a href="/">العودة إلى الصفحة الرئيسية</a>
+      </footer>
+    </div>
+  </body>
+</html>
